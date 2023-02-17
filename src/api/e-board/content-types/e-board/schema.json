@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "e_boards",
+  "info": {
+    "singularName": "e-board",
+    "pluralName": "e-boards",
+    "displayName": "E-Board"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "position": {
+      "type": "string"
+    },
+    "member": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::member.member",
+      "inversedBy": "e_boards"
+    },
+    "chapter": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chapter.chapter",
+      "inversedBy": "e_boards"
+    }
+  }
+}

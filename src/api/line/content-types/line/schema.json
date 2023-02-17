@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lines",
+  "info": {
+    "singularName": "line",
+    "pluralName": "lines",
+    "displayName": "Line",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "term": {
+      "type": "enumeration",
+      "enum": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ]
+    },
+    "year": {
+      "type": "integer"
+    },
+    "ship_name": {
+      "type": "string"
+    },
+    "chapter": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chapter.chapter",
+      "inversedBy": "lines"
+    },
+    "line_members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::line-member.line-member",
+      "mappedBy": "line"
+    }
+  }
+}
