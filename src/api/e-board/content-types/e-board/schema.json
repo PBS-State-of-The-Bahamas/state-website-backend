@@ -4,16 +4,14 @@
   "info": {
     "singularName": "e-board",
     "pluralName": "e-boards",
-    "displayName": "E-Board"
+    "displayName": "E-Board",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "position": {
-      "type": "string"
-    },
     "member": {
       "type": "relation",
       "relation": "manyToOne",
@@ -25,6 +23,20 @@
       "relation": "manyToOne",
       "target": "api::chapter.chapter",
       "inversedBy": "e_boards"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "President",
+        "First Vice President",
+        "Second Vice President",
+        "Treasurer",
+        "Director Bigger Better Business",
+        "Director of Education",
+        "Director of Social Action",
+        "Chaplin",
+        "Parliamentarian"
+      ]
     }
   }
 }
