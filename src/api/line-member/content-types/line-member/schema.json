@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "line_members",
+  "info": {
+    "singularName": "line-member",
+    "pluralName": "line-members",
+    "displayName": "Line-Member",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "line_name": {
+      "type": "string"
+    },
+    "member": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::member.member",
+      "inversedBy": "line_member"
+    },
+    "line": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::line.line",
+      "inversedBy": "line_members"
+    },
+    "line_number": {
+      "type": "integer"
+    }
+  }
+}
