@@ -1,4 +1,3 @@
-# path: ./Dockerfile
 
 FROM node:18-alpine
 # Installing libvips-dev for sharp Compatibility
