@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chapter_charters",
+  "info": {
+    "singularName": "chapter-charter",
+    "pluralName": "chapter-charters",
+    "displayName": "Chapter-Charter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "chapter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::chapter.chapter"
+    },
+    "chapter_page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chapter-page.chapter-page",
+      "inversedBy": "chapterCharters"
+    }
+  }
+}
