@@ -33,6 +33,9 @@
       "relation": "oneToMany",
       "target": "api::e-board.e-board",
       "mappedBy": "chapter"
+    },
+    "chapter_abbreviation": {
+      "type": "string"
     }
   }
 }
