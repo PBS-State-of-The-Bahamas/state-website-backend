@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chapter_socials",
+  "info": {
+    "singularName": "chapter-social",
+    "pluralName": "chapter-socials",
+    "displayName": "Chapter-Social",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "twitter": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "chapter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::chapter.chapter"
+    },
+    "chapter_page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chapter-page.chapter-page",
+      "inversedBy": "chapterSocials"
+    },
+    "linkedin": {
+      "type": "string"
+    }
+  }
+}
