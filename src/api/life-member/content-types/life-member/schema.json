@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "life_members",
+  "info": {
+    "singularName": "life-member",
+    "pluralName": "life-members",
+    "displayName": "Life-Member"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "opening_paragraph": {
+      "type": "richtext"
+    }
+  }
+}
