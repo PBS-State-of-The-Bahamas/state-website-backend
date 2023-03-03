@@ -16,14 +16,15 @@
       "type": "string"
     },
     "photo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "life_member": {
       "type": "boolean"
@@ -39,6 +40,9 @@
       "relation": "oneToMany",
       "target": "api::e-board.e-board",
       "mappedBy": "member"
+    },
+    "life_membership_year": {
+      "type": "integer"
     }
   }
 }
