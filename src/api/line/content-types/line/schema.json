@@ -37,6 +37,9 @@
       "relation": "oneToMany",
       "target": "api::line-member.line-member",
       "mappedBy": "line"
+    },
+    "charter_line": {
+      "type": "boolean"
     }
   }
 }
