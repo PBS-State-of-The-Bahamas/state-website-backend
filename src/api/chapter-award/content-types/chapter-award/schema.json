@@ -30,7 +30,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::chapter-page.chapter-page",
-      "inversedBy": "chapterAwards"
+      "inversedBy": "chapter_awards"
     }
   }
 }
