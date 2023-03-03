@@ -26,14 +26,14 @@
       "relation": "oneToOne",
       "target": "api::chapter.chapter"
     },
+    "linkedin": {
+      "type": "string"
+    },
     "chapter_page": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::chapter-page.chapter-page",
-      "inversedBy": "chapterSocials"
-    },
-    "linkedin": {
-      "type": "string"
+      "inversedBy": "chapter_socials"
     }
   }
 }
