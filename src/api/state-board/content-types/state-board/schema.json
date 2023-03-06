@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "state_boards",
+  "info": {
+    "singularName": "state-board",
+    "pluralName": "state-boards",
+    "displayName": "state-board"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::member.member",
+      "mappedBy": "state_board"
+    }
+  }
+}

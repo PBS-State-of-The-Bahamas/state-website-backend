@@ -43,6 +43,12 @@
     },
     "life_membership_year": {
       "type": "integer"
+    },
+    "state_board": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::state-board.state-board",
+      "inversedBy": "members"
     }
   }
 }
