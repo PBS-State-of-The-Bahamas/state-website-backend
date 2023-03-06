@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "state_histories",
+  "info": {
+    "singularName": "state-history",
+    "pluralName": "state-histories",
+    "displayName": "state-history"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "history": {
+      "type": "richtext"
+    }
+  }
+}
