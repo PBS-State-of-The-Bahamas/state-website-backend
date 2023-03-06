@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "singularName": "member",
+    "pluralName": "members",
+    "displayName": "Member",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "life_member": {
+      "type": "boolean"
+    },
+    "line_member": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::line-member.line-member",
+      "mappedBy": "member"
+    },
+    "e_boards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::e-board.e-board",
+      "mappedBy": "member"
+    },
+    "life_membership_year": {
+      "type": "integer"
+    }
+  }
+}
