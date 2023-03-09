@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chapter_socials",
+  "info": {
+    "singularName": "chapter-social",
+    "pluralName": "chapter-socials",
+    "displayName": "Chapter-Social",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "chapter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::chapter.chapter"
+    },
+    "platform": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
