@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chapter_awards",
+  "info": {
+    "singularName": "chapter-award",
+    "pluralName": "chapter-awards",
+    "displayName": "Chapter-Award",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string"
+    },
+    "chapter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::chapter.chapter"
+    },
+    "chapter_page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chapter-page.chapter-page",
+      "inversedBy": "chapter_awards"
+    }
+  }
+}
