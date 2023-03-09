@@ -35,8 +35,7 @@
     "chapter_socials": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::chapter-social.chapter-social",
-      "mappedBy": "chapter_page"
+      "target": "api::chapter-social.chapter-social"
     },
     "gallery_images": {
       "type": "media",
