@@ -22,3 +22,13 @@ jobs:
 
       - name: Docker Push
         run: docker push ${{ secrets.DOCKER_USERNAME }}/pbs-bahamas-state-backend:latest
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd deploy-state-website/
+            chmod +x ./rebuild-containers.sh
+            sudo ./rebuild-containers.sh
