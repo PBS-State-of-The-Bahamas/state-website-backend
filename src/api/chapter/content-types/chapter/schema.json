@@ -36,6 +36,9 @@
     },
     "chapter_abbreviation": {
       "type": "string"
+    },
+    "email": {
+      "type": "email"
     }
   }
 }
