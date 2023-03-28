@@ -11,7 +11,27 @@ const validators = {
     if (!options.chapter) errors.push("Chapter is required");
     return errors;
   },
+  STATE_FORM: (options) => {
+    const errors = [];
+    if (!options.name) errors.push("Name is required")
+    if (!options.email) errors.push("Email is required")
+    if (!options.message) errors.push("Message is required")
+  }
 };
+
+/**
+ * 
+ * @param {string} chapter 
+ */
+const getChapterEmail = async (chapterAbbreviation) => {
+  const chapter = await strapi.entityService.findMany(
+    "api::chapter.chapter",
+    {
+      filters: { chapter_abbreviation: options.chapter },
+    }
+  );
+  return chapter[0].email
+}
 
 const EmailTypes = {
   CHAPTER_INTEREST: async (options) => {
@@ -33,6 +53,20 @@ const EmailTypes = {
     };
     return emailObject;
   },
+  STATE_FORM: async (options) => {
+    const emailTo = await getChapterEmail(options.chapter)
+    const emailObject = {
+      to: emailTo,
+      templateID: templateIDs[options.form],
+      data: {
+        name: options.name,
+        email: options.email,
+        telephone: options.telephone,
+        message: options.message
+      }
+    }
+    return emailObject
+  }
 };
 
 module.exports = {
