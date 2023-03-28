@@ -1,5 +1,6 @@
 const templateIDs = {
   CHAPTER_INTEREST: process.env.SENDGRID_CHAPTER_INTEREST_TEMPLATE_ID,
+  SITE_CONTACT_FORM: process.env.SENDGRID_CONTACT_FORM_TEMPLATE_ID,
 };
 
 const validators = {
@@ -11,27 +12,14 @@ const validators = {
     if (!options.chapter) errors.push("Chapter is required");
     return errors;
   },
-  STATE_FORM: (options) => {
+  SITE_CONTACT_FORM: (options) => {
     const errors = [];
-    if (!options.name) errors.push("Name is required")
-    if (!options.email) errors.push("Email is required")
-    if (!options.message) errors.push("Message is required")
-  }
+    if (!options.name) errors.push("Name is required");
+    if (!options.email) errors.push("Email is required");
+    if (!options.message) errors.push("Message is required");
+    return errors;
+  },
 };
-
-/**
- * 
- * @param {string} chapter 
- */
-const getChapterEmail = async (chapterAbbreviation) => {
-  const chapter = await strapi.entityService.findMany(
-    "api::chapter.chapter",
-    {
-      filters: { chapter_abbreviation: options.chapter },
-    }
-  );
-  return chapter[0].email
-}
 
 const EmailTypes = {
   CHAPTER_INTEREST: async (options) => {
@@ -53,20 +41,25 @@ const EmailTypes = {
     };
     return emailObject;
   },
-  STATE_FORM: async (options) => {
-    const emailTo = await getChapterEmail(options.chapter)
+  SITE_CONTACT_FORM: async (options) => {
+    const chapter = await strapi.entityService.findMany(
+      "api::chapter.chapter",
+      {
+        filters: { chapter_abbreviation: options.chapter },
+      }
+    );
     const emailObject = {
-      to: emailTo,
+      to: chapter[0].email,
       templateID: templateIDs[options.form],
       data: {
         name: options.name,
         email: options.email,
         telephone: options.telephone,
-        message: options.message
-      }
-    }
-    return emailObject
-  }
+        message: options.message,
+      },
+    };
+    return emailObject;
+  },
 };
 
 module.exports = {
@@ -90,7 +83,7 @@ module.exports = {
         dynamic_template_data: email.data,
       });
     } catch (e) {
-      strapi.log.error(`Error sending email to ${sendTo}`, err);
+      strapi.log.error("Error sending email.", err);
       ctx.send({ error: "Error sending email" });
     }
     ctx.send({ success: true });
