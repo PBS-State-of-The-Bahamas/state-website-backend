@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "state_home_pages",
+  "info": {
+    "singularName": "state-home-page",
+    "pluralName": "state-home-pages",
+    "displayName": "State Home Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "about": {
+      "type": "richtext"
+    },
+    "mission": {
+      "type": "richtext"
+    },
+    "programImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "missionImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "aboutImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
