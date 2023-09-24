@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "state_boards",
+  "info": {
+    "singularName": "state-board",
+    "pluralName": "state-boards",
+    "displayName": "State-Board"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "opening_paragraph": {
+      "type": "richtext"
+    }
+  }
+}
